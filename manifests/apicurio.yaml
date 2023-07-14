@@ -1,0 +1,25 @@
+apiVersion: registry.apicur.io/v1
+kind: ApicurioRegistry
+metadata:
+  name: apicurioregistry
+spec:
+  configuration:
+    security:
+      keycloak:
+        url: "https://keycloak-apicurio-demo.apps.cluster-5s6vr.5s6vr.sandbox1580.opentlc.com/auth"
+        # ^ Required
+        # Keycloak server URL, must end with `/auth`.
+        # Use an HTTP URL in development.
+        realm: "registry"
+        # apiClientId: "registry-client-api"
+        # ^ Optional (default value)
+        # uiClientId: "registry-client-ui"
+        # ^ Optional (default value)
+    persistence: "kafkasql"
+    kafkasql:
+      bootstrapServers: "cluster-kafka-bootstrap.apicurio-demo.svc:9093"
+      security:
+        scram:
+          truststoreSecretName: cluster-cluster-ca-cert
+          user: apicurio-user
+          passwordSecretName: apicurio-user
