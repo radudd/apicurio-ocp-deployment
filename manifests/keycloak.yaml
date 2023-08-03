@@ -2,6 +2,7 @@ apiVersion: keycloak.org/v1alpha1
 kind: Keycloak
 metadata:
   name: example-keycloak
+  namespace: apicurio-demo
   labels:
     app: sso
 spec:

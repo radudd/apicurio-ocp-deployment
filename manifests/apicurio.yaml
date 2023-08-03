@@ -1,6 +1,7 @@
 apiVersion: registry.apicur.io/v1
 kind: ApicurioRegistry
 metadata:
+  namespace: apicurio-demo
   name: apicurioregistry
 spec:
   configuration:

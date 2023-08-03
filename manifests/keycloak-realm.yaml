@@ -2,6 +2,7 @@ apiVersion: keycloak.org/v1alpha1
 kind: KeycloakRealm
 metadata:
   name: registry-keycloakrealm
+  namespace: apicurio-demo
   labels:
     app: registry
 spec:
